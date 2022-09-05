@@ -1,65 +1,44 @@
 import { useState, useEffect } from "react"
+import Navbar from '../Navbar/navbar'
 
-
-const Item = ({TextoBusqueda}) => {
+const Item = () => {
     const  [carrito, setCarrito ] = useState([ ])
     const [productos, setProductos] = useState( [ ])
 
-    const Producto = async ( )=>{
+    const BuscarProductos = async ( )=>{
         try{
-            const respinse = await fetch('http://api.mercadolivre.com/sites/MLA/search?q=${textoBusqueda}')
-            const data = await Response.json ();
+            const response = await fetch('http://api.mercadolibre.com/sites/MLA/search?q=${textoBusqueda}')
+            const data = await response.json ();
+            setProductos(data.results);
                 }catch(e){
-                    console.log(e)
+                    
                 }
-
-
-
-                fetch('htttps://api.mercadolibre.com/sites/MLA/search?q=${textoBusqueda}')
-                .then(response => response.json())
-                .then(data =>{
-
-                }).catch(error =>{
-                    console.log(error);
-                })
-                  
-                  useEffect(() => {
-                    Producto()
-                  }, [TextoBusqueda])
-                  console.log (productos)
-                  console.log("Me estoy por renderizar")
+            
+                useEffect(() => {
+                    BuscarProductos()
+                }, [])
+                console.log (productos)
+    console.log("Me estoy por renderizar")
 
 }
-    const [ numero, setNumero] = useState(0)
+return(
+    <div className="App" style={{ fontsize: '20px,', borderBottom: "1px solid red"}}>
+<Navbar carritoLength={carrito.length}/>   
+   
+<div>
+    <h3>Producto</h3>
+    <div>
+        <button onClick={() =>{
+            setCarrito([...carrito, "zapas"]);
+            console.log(carrito)
+        }}>
+            Agregar al carrito
+        </button>
+         </div>
+         </div>
+         </div>
 
-    function aumentar() {
-        setNumero( numero + 1)
+    );
+ }
 
-    }
-    function disminuir(){
-        setNumero( numero - 1)
-    }
-
-
-    return <section>
-        <div className="contein">
-        <h3>Productos</h3>
-        <p>{numero}</p>
-        <button className="contein" onClick={disminuir}>-</button>
-        <button className="contein" onClick={aumentar}>+</button>
-        {productos.map((productos) => {
-            return <div>
-            <button className="contein" onClick={() => {
-                setCarrito( [ ...carrito,]);
-                console.log(carrito)
-            }}>
-                
-            Agregar al carrito 
-            </button>
-            </div> 
-    })}
-    </div>
-    </section> 
-
- };
- export default Item()
+export default Item()

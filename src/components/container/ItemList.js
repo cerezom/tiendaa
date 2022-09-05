@@ -1,9 +1,9 @@
-import Item from './Item'
 
+const Item = () => {
+    console.log ()
 
-{productos.map(producto, index)
-return (
-    <Item/>
-)
+return 
+
 }
+
 export default Item;

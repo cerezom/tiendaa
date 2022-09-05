@@ -5,7 +5,7 @@ import Title from './components/Text/tittle';
 import ItemListContainer from './components/container/ItemListContainer';
 import 'bootstrap/dist/css/bootstrap.min.css' ;
 import Car from './components/Navbar/car.svg';
-import ItemList from './components/container/Item';
+import ItemList from './components/container/ItemList';
 import Item from './components/container/Item';
 
 function App() {

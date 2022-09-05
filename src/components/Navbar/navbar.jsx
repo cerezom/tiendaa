@@ -1,15 +1,28 @@
+/*const Navbar = ({carritoLenght}) => {
+  return (
+    <nav>
+      Tienes {carritoLenght} prodcutos en el carrito
+    </nav>
+  )
+}
+export default Navbar;*/
+
+
+
+
+
 
 import Nav from 'react-bootstrap/Nav';
 import Car from './car.svg';
 import './stylos.css';
-
+  
 function Barnav() {
   return (
     <Nav
       activeKey="/home"
       onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
     >
-     
+    
       <Nav.Item>
         <Nav.Link href="/home">Nosotros</Nav.Link>
       </Nav.Item>
@@ -34,4 +47,3 @@ function Barnav() {
 }
 
 export default Barnav;
-
