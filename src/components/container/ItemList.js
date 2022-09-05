@@ -1,9 +1,16 @@
+import Item from './Item'
 
-const Item = () => {
-    console.log ()
+function ItemList([productos]){
+    return( 
+    <div> 
+        {productos.map(producto =>{ 
+                return(
+                    <Item producto = {producto} />
+            )
+        })
 
-return 
 
+    } </div>
+ )
 }
-
-export default Item;
+export default ItemList

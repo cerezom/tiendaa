@@ -1,44 +1,20 @@
 import { useState, useEffect } from "react"
-import Navbar from '../Navbar/navbar'
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 
-const Item = () => {
-    const  [carrito, setCarrito ] = useState([ ])
-    const [productos, setProductos] = useState( [ ])
-
-    const BuscarProductos = async ( )=>{
-        try{
-            const response = await fetch('http://api.mercadolibre.com/sites/MLA/search?q=${textoBusqueda}')
-            const data = await response.json ();
-            setProductos(data.results);
-                }catch(e){
-                    
-                }
-            
-                useEffect(() => {
-                    BuscarProductos()
-                }, [])
-                console.log (productos)
-    console.log("Me estoy por renderizar")
-
+const Item = ()  => {
+  return (
+    <Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src="holder.js/100px180" />
+      <Card.Body>
+        <Card.Title>Card Title</Card.Title>
+        <Card.Text>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </Card.Text>
+        <Button variant="primary">Go somewhere</Button>
+      </Card.Body>
+    </Card>
+  );
 }
-return(
-    <div className="App" style={{ fontsize: '20px,', borderBottom: "1px solid red"}}>
-<Navbar carritoLength={carrito.length}/>   
-   
-<div>
-    <h3>Producto</h3>
-    <div>
-        <button onClick={() =>{
-            setCarrito([...carrito, "zapas"]);
-            console.log(carrito)
-        }}>
-            Agregar al carrito
-        </button>
-         </div>
-         </div>
-         </div>
-
-    );
- }
-
-export default Item()
+export default Item
