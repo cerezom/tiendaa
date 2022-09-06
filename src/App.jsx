@@ -12,9 +12,7 @@ function App() {
     <div className="App" style={{fontSize: '20px' , borderBotton: '1px solid red'}}>
     <Navbar/>
       <Title/>
-      <ItemListContainer textoBusqueda={"Zapatillas"}/>
-       <Item/>
-       <ItemList/>
+      <ItemListContainer textoBusqueda={"zapatillas"}/>
     </div>
   );
 }

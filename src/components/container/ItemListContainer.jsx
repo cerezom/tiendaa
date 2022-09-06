@@ -8,7 +8,7 @@ const [loaded,setLoaded] = useState(false)
 
 const buscarProductos = async () => {
     try{ 
-        const response = await fetch('{http://api.mercadolibre.com/sites/MLA/search?q='+textoBusqueda)
+        const response = await fetch('httpS://api.mercadolibre.com/sites/MLA/search?q='+textoBusqueda)
         const data = await response.json ();
         console.log(data)
         setItems(data.results);
